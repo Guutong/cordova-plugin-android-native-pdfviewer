@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-android-native-pdfviewer" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>AndroidNativePdfViewer</name>
+    <js-module name="AndroidNativePdfViewer" src="www/AndroidNativePdfViewer.js">
+        <clobbers target="window.AndroidNativePdfViewer" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AndroidNativePdfViewer">
+            <param name="android-package" value="xyz.guutong.androidnativepdfviewer.AndroidNativePdfViewer" />
+        </feature>
+        </config-file>
+        <source-file src="src/android/AndroidNativePdfViewer.java" target-dir="src/xyz/guutong/androidnativepdfviewer" />
+         <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="xyz.guutong.androidpdfviewer.PdfViewActivity" android:theme="@style/AppTheme"/>
+        </config-file>
+        <source-file src="src/android/pdfviewer-library.aar" target-dir="libs"/>
+        <framework src="src/android/AndroidNativePDFViewer.gradle" custom="true" type="gradleReference" />
+    </platform>
+</plugin>
