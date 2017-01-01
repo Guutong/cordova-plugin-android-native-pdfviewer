@@ -13,7 +13,13 @@ ionic plugin add cordova-plugin-android-native-pdfviewer
 ### Example
 
 ```
-AndroidNativePdfViewer.openPdfUrl(url, title,{ headerColor:"#000000",showScroll:true, swipeHorizontal:false }, 
+var options = { 
+                headerColor:"#000000",
+                showScroll:true, 
+                swipeHorizontal:false 
+              };
+              
+AndroidNativePdfViewer.openPdfUrl(url, title, options, 
                         function(success){
                         // success callback
                         },function(error){
