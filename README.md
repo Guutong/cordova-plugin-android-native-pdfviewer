@@ -16,6 +16,8 @@ ionic plugin add cordova-plugin-android-native-pdfviewer
 var options = { 
                 headerColor:"#000000",
                 showScroll:true, 
+                showShareButton:true, 
+                showCloseButton:true, 
                 swipeHorizontal:false 
               };
               
